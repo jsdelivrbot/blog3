@@ -8,18 +8,30 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NewPostButton from './NewPostButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import divStyles from './divStyles';
 
-const divstyle = {
-  background = '#ffe9af',
-  border-width = '3px',
-  border-color = '#ffc93a'
-
+const divStyle = {
+  'background' : '#ffe9af',
+  'border-width' :'3px',
+  'border-color' : '#ffc93a',
+  'border-style' : 'solid',
+  'margin' : '4em 4em 4em 4em',
+  'padding'  : '2em 2em 2em 2em'
+};
+const divStyle2 = {
+  'background' : '#ffe9af',
+  'border-width' :'3px',
+  'border-color' : '#ffc93a',
+  'border-style' : 'solid',
+  'margin' : '4em 4em 4em 4em',
+  'padding'  : '2em 2em 2em 2em'
 };
 
 class PostsIndex extends Component {
   componentDidMount() {
     this.props.fetchPosts();
   }
+
 
 
 
@@ -42,7 +54,10 @@ class PostsIndex extends Component {
         <MuiThemeProvider>
      <NewPostButton />
    </MuiThemeProvider>
+
+        <div style={divStyle2}>
         <h3>Posts</h3>
+      </div>
         <ul className="list-group">
           {this.renderPosts()}
         </ul>
