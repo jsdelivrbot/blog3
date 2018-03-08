@@ -8,23 +8,20 @@ import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import NewPostButton from './NewPostButton';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import divStyles from './divStyles';
+//import divStyles from '.../src/style/divStyles';
+const orange  = '#ffc93a'
+const gelb    = '#ffe9af';
 
 const divStyle = {
-  'background' : '#ffe9af',
-  'border-width' :'3px',
-  'border-color' : '#ffc93a',
-  'border-style' : 'solid',
-  'margin' : '4em 4em 4em 4em',
+  'background' : gelb,
+  'borderWidth' :'3px',
+  'borderColor' : orange,
+  'borderStyle' : 'solid',
+  'margin' : '2em 2em 2em 2em',
   'padding'  : '2em 2em 2em 2em'
 };
 const divStyle2 = {
-  'background' : '#ffe9af',
-  'border-width' :'3px',
-  'border-color' : '#ffc93a',
-  'border-style' : 'solid',
-  'margin' : '4em 4em 4em 4em',
-  'padding'  : '2em 2em 2em 2em'
+
 };
 
 class PostsIndex extends Component {
@@ -39,7 +36,7 @@ class PostsIndex extends Component {
   renderPosts() {
     return _.map(this.props.posts, post => {
       return (
-        <li className="list-group-item" key={post.id}>
+        <li className="list-group-item" key={post.id} style={{'margin' : '0em 1em 1em 0em', 'background' :  orange, 'color':gelb}}>
           <Link to={`/posts/${post.id}`}>
             {post.title}
           </Link>
@@ -55,7 +52,7 @@ class PostsIndex extends Component {
      <NewPostButton />
    </MuiThemeProvider>
 
-        <div style={divStyle2}>
+        <div style={{'padding'  : '2em 2em 2em 2em'}}>
         <h3>Posts</h3>
       </div>
         <ul className="list-group">
