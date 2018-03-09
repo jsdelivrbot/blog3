@@ -2,13 +2,18 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
 
-const NewPostButton = () => (
+const NewPostButton = (label, href, type) => (
 
   <RaisedButton
-          label="Beitrag verfassen"
+        /*  label={label}
           linkButton={true}
-          href="./posts/new"
+          href={href}
           primary={true}
+          */
+          href="./posts/new"
+          primary="true"
+          label='Neuer Post'
+
                 />
 
 

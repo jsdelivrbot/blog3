@@ -3,6 +3,9 @@ import { Field, reduxForm } from "redux-form";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createPost } from "../actions";
+import divStyles from '../../style/divStyles';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class PostsNew extends Component {
   renderField(field) {
@@ -30,25 +33,42 @@ class PostsNew extends Component {
     const { handleSubmit } = this.props;
 
     return (
+      <div style={divStyles.home}>
       <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
         <Field
-          label="Title For Post"
+          label="Überschrift"
           name="title"
           component={this.renderField}
         />
         <Field
-          label="Categories"
+          label="Hashtag"
           name="categories"
           component={this.renderField}
         />
         <Field
-          label="Post Content"
+          label="Inhalt"
           name="content"
           component={this.renderField}
         />
-        <button type="submit" className="btn btn-primary">Submit</button>
-        <Link to="/" className="btn btn-danger">Cancel</Link>
+        <MuiThemeProvider>
+     <RaisedButton
+       //type="submit"
+       primary="true"
+       label='Posten'
+     />
+        </MuiThemeProvider>
+
+          <MuiThemeProvider  >
+     <RaisedButton
+       style={{'margin':'0 0 0 .5em'}}
+       href="/"
+       secondary="true"
+       label='Verwerfen'
+     />
+   </MuiThemeProvider>
+
       </form>
+    </div>
     );
   }
 }
@@ -59,13 +79,13 @@ function validate(values) {
 
   // Validate the inputs from 'values'
   if (!values.title) {
-    errors.title = "Enter a title";
+    errors.title = "Kein Titel vorhanden";
   }
   if (!values.categories) {
-    errors.categories = "Enter some categories";
+    errors.categories = "Bitte Hashtag angeben";
   }
   if (!values.content) {
-    errors.content = "Enter some content please";
+    errors.content = "Inhalt darf nicht leer sein";
   }
 
   // If errors is empty, the form is fine to submit
