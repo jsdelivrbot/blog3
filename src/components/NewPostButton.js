@@ -11,7 +11,7 @@ const NewPostButton = (label, href, type) => (
           primary={true}
           */
           href="./posts/new"
-          primary="true"
+          primary={true}
           label='Neuer Post'
 
                 />

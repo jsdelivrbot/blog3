@@ -26,7 +26,6 @@ class PostsShow extends Component {
     if (!post) {
       return <div>Loading...</div>;
     }
-
     return (<div style={divStyles.home}>
 
       <h3 style={{
@@ -34,7 +33,7 @@ class PostsShow extends Component {
         }}>{post.title}</h3>
       <h6 style={{
         'margin' : ' 1em 0 1em 0'
-        }}>Categories: {post.categories}</h6>
+      }}>#{post.categories}</h6>
       <p>{post.content}</p>
       <MuiThemeProvider>
         <RaisedButton href="/" primary='true'  label='Startseite'/>
@@ -56,6 +55,7 @@ function mapStateToProps({
   return {
     post: posts[ownProps.match.params.id]
   };
+
 }
 
 export default connect(mapStateToProps, {fetchPost, deletePost})(PostsShow);

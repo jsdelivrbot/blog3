@@ -52,8 +52,8 @@ class PostsNew extends Component {
         />
         <MuiThemeProvider>
      <RaisedButton
-       //type="submit"
-       primary="true"
+      type="submit"
+       primary={true}
        label='Posten'
      />
         </MuiThemeProvider>
@@ -62,7 +62,7 @@ class PostsNew extends Component {
      <RaisedButton
        style={{'margin':'0 0 0 .5em'}}
        href="/"
-       secondary="true"
+       secondary={true}
        label='Verwerfen'
      />
    </MuiThemeProvider>
