@@ -3,7 +3,7 @@ import axios from "axios";
 export const FETCH_POSTS = "fetch_posts";
 export const FETCH_POST = "fetch_post";
 export const CREATE_POST = "create_post";
-export const DELETE_POST = "delete_post";
+export const DELETE_POST = "del ete_post";
 
 const ROOT_URL = "http://reduxblog.herokuapp.com/api";
 //const API_KEY = "?key=tobiasbachmann123";
@@ -19,7 +19,7 @@ export function fetchPosts() {
 
 export function createPost(values, callback) {
   const request = axios
-    .post(`${ROOT_URL}/posts${API_KEY}`, values)
+    .post(` ${ROOT_URL}/posts${API_KEY}`, values)
     .then(() => callback());
 
   return {
